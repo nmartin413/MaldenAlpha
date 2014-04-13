@@ -3,7 +3,7 @@ var stdin = process.openStdin();
 
 var tivo = require('./tivo');
 
-tivo.sendCommand('SETCH 7')
+tivo.sendCommand('KEYBOARD GUIDE')
 	.fail(function (err) {
 		console.error(err);
 	})

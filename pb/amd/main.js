@@ -8,6 +8,7 @@ require(['pb/amd/require.config.js'], function () {
 
 	], function ($) {
 
+
 		$.ajaxSetup({
 			contentType: 'application/json',
 			dataType: 'json'
@@ -26,11 +27,13 @@ require(['pb/amd/require.config.js'], function () {
 			$('body').hide();
 		})
 
-		if (location.pathname === "/") {
-			require(['pages/home'], function (Home) {
-				new Home({ el: document.body });
-			});
-		}
+		var pathname = location.pathname;
+		var pagePath = ['pages', (pathname === "/") ? '/home' : pathname].join('');
+
+		console.log('loading page from path', pagePath);
+		require([pagePath], function (Page) {
+			new Page({ el: document.body });
+		});
 
 
 	});
