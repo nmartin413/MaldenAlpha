@@ -16,11 +16,7 @@ define([
 					url: '/denon/volume',
 					type: 'put',
 					data: JSON.stringify({ value: $('#volumeRange').val() })
-				}).then(function () {
-					document.location.href = "/denon";
-				});
-
-				$('body').hide();
+				})
 			});
 			
 			$('#setInput').click(function (evt) {
@@ -28,11 +24,7 @@ define([
 					url: '/denon/input',
 					type: 'put',
 					data: JSON.stringify({ value: $('#selectedInput').val() })
-				}).then(function () {
-					document.location.href = "/denon";
-				});
-
-				$('body').hide();
+				})
 			});
 		},
 
