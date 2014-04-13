@@ -18,64 +18,64 @@ module.exports = {
 	// 	12: []
 	// }
 
-	0:{
-		0: ["GUIDE", "Guide"],
-		1: ["TIVO", "TiVo"],
-		2: ["LIVETV", "Live TV"],
-		3: ["VIDEO_ON_DEMAND", "VOD"],
-		4: [],
-		5: [],
-		6: [],
-		7: [],
-		8: [],
-		9: [],
-		10: [],
-		11: ["EXIT", "Exit"]
-	},
+	0:[
+		["GUIDE", "Guide"],
+		["TIVO", "TiVo"],
+		["LIVETV", "Live TV"],
+		["VIDEO_ON_DEMAND", "VOD"],
+		[],
+		["PLAY", "Play"],
+		["PAUSE", "Pause"],
+		["REVERSE", "Reverse"],
+		["FORWARD", "Forward"],
+		["RECORD", "Record"],
+		[],
+		["EXIT", "Exit"]
+	],
 
-	1:{
-		0: [],
-		1: ["UP", "Up"],
-		2: [],
-		3: [],
-		4: [],
-		5: [],
-		6: [],
-		7: [],
-		8: [],
-		9: [],
-		10: [],
-		11: []
-	},
+	1:[
+		[],
+		["UP", "Up"],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	],
 
-	2:{
-		0: ["LEFT", "Left"],
-		1: ["SELECT", "Select"],
-		2: ["RIGHT", "Right"],
-		3: [],
-		4: ["PLAY", "Play"],
-		5: ["PAUSE", "Pause"],
-		6: ["REVERSE", "Reverse"],
-		7: ["FORWARD", "Forward"],
-		8: [],
-		9: ["RECORD", "Record"],
-		10: [],
-		11: []
-	},
+	2:[
+		["LEFT", "Left"],
+		["SELECT", "Select"],
+		["RIGHT", "Right"],
+		[],
+		[],
+		["CHANNELUP", "CH Up"],
+		["CHANNELDOWN", "CH Down"],
+		[],
+		[],
+		[],
+		[],
+		[]
+	],
 
-	3:{
-		0: [],
-		1: ["DOWN", "Down"],
-		2: [],
-		3: [],
-		4: [],
-		5: [],
-		6: [],
-		7: [],
-		8: [],
-		9: [],
-		10: [],
-		11: []
-	}
+	3:[
+		[],
+		["DOWN", "Down"],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
 	
 }

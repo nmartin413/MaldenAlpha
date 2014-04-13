@@ -1,7 +1,6 @@
 
 
 #tivoButtons.sending {
-	opacity:0.5;
 }
 
 #tivoButtons {
@@ -20,5 +19,5 @@
 }
 
 #tivoButtons.sending #tivoStatus {
-	display:block;
+	/*display:block;*/
 }
