@@ -72,6 +72,15 @@ function setVolume(level) {
 	return sendCommand('MV' + levelString);
 }
 
+function setInput(input){
+	var newInput = input.toString();
+	
+	console.log('[denon] switching input to', input);
+
+	return sendCommand('SI' + input);
+	
+}
+
 var stateParams = {
 
 	input: {

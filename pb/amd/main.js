@@ -12,7 +12,7 @@ require(['pb/amd/require.config.js'], function () {
 			contentType: 'application/json',
 			dataType: 'json'
 		});
-
+		
 		$('#setVolume').click(function (evt) {
 
 			$.ajax({
@@ -25,6 +25,7 @@ require(['pb/amd/require.config.js'], function () {
 
 			$('body').hide();
 		})
+
 
 		if (location.pathname === "/") {
 			require(['pages/home'], function (Home) {

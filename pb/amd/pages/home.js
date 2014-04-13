@@ -10,6 +10,19 @@ define([
 
 		initView: function () {
 			this.updateVolume();
+			
+		    $('#setVolume').click(function (evt) {
+
+			$.ajax({
+				url: '/denon/volume',
+				type: 'put',
+				data: JSON.stringify({ value: $('#volumeRange').val() })
+			}).then(function () {
+				document.location.href = "/";
+			});
+
+			$('body').hide();
+		})
 		},
 
 		events: {
@@ -21,7 +34,9 @@ define([
 			var displayVolume = 80 - parseInt(postiveVolume, 10);
 
 			this.$el.find('#volumeValue').html("-" + displayVolume + ".0db");
-		}
+		},
+		
+		
 
 	});
 	
