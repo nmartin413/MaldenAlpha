@@ -133,6 +133,7 @@ module.exports.increaseVolume = _.partial(sendCommand, codes.masterVolume.up);
 module.exports.decreaseVolume = _.partial(sendCommand, codes.masterVolume.down);
 
 module.exports.setVolume = setVolume;
+module.exports.setInput = setInput;
 
 
 

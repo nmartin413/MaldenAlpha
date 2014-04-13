@@ -21,9 +21,12 @@
 				<br><br>
 			</div>
 			<div class="col-md-6">
-				<h4>Input Control</h4>
-				<p class="lead" id="inputValue"></p>
-				<input type="text" id="selectedInput" value="{{denon.input}}"/>
+				<h4>Video Input Control</h4>
+				<p class="lead" id="inputValue">{{denon.input}}</p>
+				<select id="selectedInput">
+					<option value="TV/CBL">TV/CBL</option>
+					<option value="DVD">DVD</option>
+				</select>
 				<br />
 				<button id="setInput" class="btn btn-block btn-default">Update</button>
 				<br><br>

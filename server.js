@@ -29,6 +29,12 @@ app.get('/', function (req, res) {
 		})
 });
 
+app.get('/tivo', function (req, res) {
+
+	res.render('tivo');
+
+});
+
 
 require('./controllers/denon')(app);
 require('./controllers/tivo')(app);

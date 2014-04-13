@@ -12,7 +12,6 @@ define([
 			this.updateVolume();
 			
 		    $('#setVolume').click(function (evt) {
-				alert("HELLO!");
 				$.ajax({
 					url: '/denon/volume',
 					type: 'put',
@@ -25,7 +24,6 @@ define([
 			});
 			
 			$('#setInput').click(function (evt) {
-				alert("hello!");
 				$.ajax({
 					url: '/denon/input',
 					type: 'put',

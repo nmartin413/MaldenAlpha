@@ -6,22 +6,22 @@ var tivo = require('../tivo');
 module.exports = function (app) {
 
 	app.post('/tivo', function (req, res) {
-		var command = req.param('command');
+		var command = req.body.command;
 
 		tivo.sendCommand(command)
 			.fail(function (err) {
 				res.json({
-					msg: 'Error with TiVo',
+					msg: 'Error with TiVo, sent ' + command,
 					err: err
 				});
 			})
 			.then(function (response) {
 				res.json({ 
-					msg:'sent ' + num,
+					msg:'Sent ' + command,
 					response: response
 				});
 			});
-			
+
 	});
 
 	app.get('/tivo/channel', function (req, res) {
