@@ -31,6 +31,7 @@ app.get('/', function (req, res) {
 
 
 require('./controllers/denon')(app);
+require('./controllers/tivo')(app);
 
 
 var server = app.listen(8080, function() {
