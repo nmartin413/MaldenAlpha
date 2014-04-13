@@ -5,6 +5,14 @@ var tivo = require('../tivo');
 
 module.exports = function (app) {
 
+	app.get('/tivo', function (req, res) {
+
+		res.render('tivo', {
+			buttonLayout: require('../tivo/buttonLayout')
+		});
+
+	});
+
 	app.post('/tivo', function (req, res) {
 		var command = req.body.command;
 

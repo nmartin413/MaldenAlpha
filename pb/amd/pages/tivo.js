@@ -12,13 +12,15 @@ define([
 		events: {
 			"click [data-tivo-code]": function (evt) {
 				evt.preventDefault();
+				if (this.$el.find('#tivoButtons').hasClass('sending')) return;
+
 				var code = $(evt.currentTarget).data('tivoCode');
 				this.sendCode('KEYBOARD ' + code);
 			}
 		},
 
 		sendCode: function (code) {
-			this.$el.addClass('sending');
+			this.$el.find('#tivoButtons').addClass('sending');
 			this.$el.find('#tivoStatus').text('Sending...');
 
 			var opts = {
@@ -30,7 +32,7 @@ define([
 			$.ajax(opts)
 				.then(_.bind(function () {
 					this.$el.find('#tivoStatus').text('');
-					this.$el.addClass('sending');
+					this.$el.find('#tivoButtons').removeClass('sending');
 				}, this));
 		}
 

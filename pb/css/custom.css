@@ -1,0 +1,24 @@
+
+
+#tivoButtons.sending {
+	opacity:0.5;
+}
+
+#tivoButtons {
+	position:relative;
+}
+
+#tivoStatus {
+	position:absolute;
+	display:none;
+	width:30%;
+	top:2%;
+	left:35%;
+	padding:5px;
+	border:1px solid #bbb;
+	border-radius:5px;
+}
+
+#tivoButtons.sending #tivoStatus {
+	display:block;
+}
