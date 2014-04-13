@@ -1,0 +1,25 @@
+<br>
+<div class="container">
+	{{#if error}}
+		<div class="alert alert-danger">
+			<p>Error.</p>
+		</div>
+	{{/if}}
+	{{#unless error}}
+		<div class="row">
+			<div class="col-md-4">
+				<p>Input: {{denon.input}}</p>
+				<p>Volume: {{denon.volume}}</p>
+				<br><br>
+			</div>
+			<div class="col-md-6">
+				<h4>Volume Control</h4>
+				<p class="lead" id="volumeValue"></p>
+				<input type="range" id="volumeRange" value="{{denon.volume}}" min="0" max="80" step="1" />
+				<br />
+				<button id="setVolume" class="btn btn-block btn-default">Update</button>
+				<br><br>
+			</div>
+		</div>
+	{{/unless}}
+</div>
