@@ -53,9 +53,7 @@ function sendCommand(command) {
 					}
 				}, 200);
 			});
-
-
-		});
+		}).delay(300);
 
 		return commandQueue;
 	});
