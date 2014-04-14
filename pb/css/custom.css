@@ -1,10 +1,18 @@
 
 
-#tivoButtons.sending {
+.tivo-buttons.sending {
 }
 
-#tivoButtons {
+.tivo-buttons {
 	position:relative;
+}
+
+.tivo-buttons .button-box {
+	height:50px;
+}
+
+.tivo-buttons button {
+	margin-bottom:10px;
 }
 
 #tivoStatus {
@@ -18,8 +26,9 @@
 	border-radius:5px;
 }
 
-#tivoButtons.sending #tivoStatus {
+.tivo-buttons.sending #tivoStatus {
 	/*display:block;*/
 }
+
 
 #volumeRange, #setVolume, #setInput {display:none;}

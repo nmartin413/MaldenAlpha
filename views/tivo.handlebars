@@ -1,19 +1,64 @@
-<div id="tivoButtons" class="container">
+{{#if err}}
+	<div class="container">
+		<div class="alert alert-danger">
+			<p class="lead">{{err}}</p>
+		</div>
+	</div>
+{{/if}}
+{{#unless err}}
+<div id="tivoButtons" class="tivo-buttons container">
 	<div class="row">
 		<div class="col-md-12">
 			<span id="tivoStatus"></span>
 		</div>
 	</div>
-	{{#each buttonLayout}}
+	<div class="row">
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+			<div class="row">
+				<div class="col-xs-4 col-sm-12">{{{tivoBtn 'GUIDE' 'Guide'}}}</div>
+				<div class="col-xs-4 col-sm-12">{{{tivoBtn 'TIVO' 'TiVo'}}}</div>
+				<div class="col-xs-4 col-sm-12">{{{tivoBtn 'LIVETV' 'Live TV'}}}</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-5">
+			<br />
+			<div class="row">
+				<div class="col-xs-4">{{{tivoBtn 'CHANNELUP' 'CH Up'}}}</div>
+				<div class="col-xs-4">{{{tivoBtn 'UP' 'Up'}}}</div>
+				<div class="col-xs-4">{{{tivoBtn 'EXIT' 'Exit'}}}</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">{{{tivoBtn 'LEFT' 'Left'}}}</div>
+				<div class="col-xs-4">{{{tivoBtn 'SELECT' 'Select'}}}</div>
+				<div class="col-xs-4">{{{tivoBtn 'RIGHT' 'Right'}}}</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">{{{tivoBtn 'CHANNELDOWN' 'CH Down'}}}</div>
+				<div class="col-xs-4">{{{tivoBtn 'DOWN' 'Down'}}}</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<br />
+			<div class="row">
+				<div class="col-xs-3 col-sm-2">{{{tivoBtn 'PLAY' 'Play'}}}</div>
+				<div class="col-xs-3 col-sm-2">{{{tivoBtn 'PAUSE' 'Pause'}}}</div>
+				<div class="col-xs-3 col-sm-2">{{{tivoBtn 'FORWARD' 'Forward'}}}</div>
+				<div class="col-xs-3 col-sm-2">{{{tivoBtn 'REVERSE' 'Reverse'}}}</div>
+				<div class="col-xs-3 col-sm-2">{{{tivoBtn 'RECORD' 'Record'}}}</div>
+			</div>
+		</div>
+	</div>
+<!-- 	{{#each buttonLayout}}
 	<div class="row">
 		{{#each this}}
-		<div class="col-xs-3 col-sm-3 col-md-2 col-lg-1">
-			{{#if this}}
-			<button data-tivo-code="{{this.[0]}}" class="btn btn-default btn-block">{{this.[1]}}</button>
+		<div class="button-box col-xs-3 col-sm-3 col-md-2 col-lg-1">
+			{{#if text}}
+			<button data-tivo-code="{{code}}" class="btn btn-default btn-block">{{text}}</button>
 			{{/if}}
+			<br>
 		</div>
 		{{/each}}
 	</div>
-	<br>
-	{{/each}}
+	{{/each}} -->
 </div>
+{{/unless}}
