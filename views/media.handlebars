@@ -1,0 +1,14 @@
+{{log media}}
+<div class="container">
+<div class="row">
+
+{{#each media}}
+<div class="col-xs-12">
+<div data-media-item='{this.file}}'>{{this.artist}}</div>
+{{#each this.albums}}
+item {{this}}
+{{/each}}
+</div>
+{{/each}}
+</div>
+</div>

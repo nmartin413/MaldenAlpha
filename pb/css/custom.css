@@ -22,5 +22,4 @@
 	/*display:block;*/
 }
 
-#volumeRange {display:none;}
-#setVolume {display:none;}
+#volumeRange, #setVolume, #setInput {display:none;}
