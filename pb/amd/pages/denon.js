@@ -17,7 +17,8 @@ define([
 			"change #volumeRange": 'updateVolume',
 			"change #selectedInput": 'updateInput',
 			"click #btnVolumeUp": 'increaseVolume',
-			"click #btnVolumeDown": 'decreaseVolume'
+			"click #btnVolumeDown": 'decreaseVolume',
+			"click #btnVolumeMute": 'muteVolume'
 		},
 		
 		increaseVolume: function(){
@@ -32,6 +33,10 @@ define([
 			var newVolume = parseInt(slider.val()) - 1;
 			slider[0].setAttribute("value", newVolume || slider.attributes("min"));
 			this.updateVolume();
+		},
+		
+		muteVolume: function(){
+			this.sendAjax({url: '/denon/toggleMute', value: "toggleMute"});
 		},
 		
 		updateVolume: function () {
