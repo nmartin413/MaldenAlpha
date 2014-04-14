@@ -1,14 +1,53 @@
 
 
-
+var _ = require('underscore');
 var tivo = require('../tivo');
+
+
+function getButtonLayout() {
+	var base = require('../tivo/buttonLayout');
+	return _.map(base, function (row) {
+		if (row.length !== 12) {
+			throw new Error('Row must have exactly 12!');
+		}
+		return _.map(row, function (entry) {
+			return { code:entry[0], text: entry[1] };
+
+		});
+	});
+}
+
 
 module.exports = function (app) {
 
+	var helpers = {
+			tivoBtn: function (code, text) {
+				return [
+					'<button data-tivo-code="',
+					code,
+					'" class="btn btn-default btn-block">',
+					text,
+					'</button>'
+				].join('');
+			}
+	};
+
 	app.get('/tivo', function (req, res) {
+		var buttonLayout;
+
+		try {
+			buttonLayout = getButtonLayout();
+
+		} catch (err) {
+			return res.render('tivo', {
+				err: err.message,
+				helpers: helpers
+			});
+		}
 
 		res.render('tivo', {
-			buttonLayout: require('../tivo/buttonLayout')
+			buttonLayout: buttonLayout,
+			helpers: helpers
 		});
 
 	});
