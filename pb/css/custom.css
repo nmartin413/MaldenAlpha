@@ -21,3 +21,6 @@
 #tivoButtons.sending #tivoStatus {
 	/*display:block;*/
 }
+
+#volumeRange {display:none;}
+#setVolume {display:none;}
