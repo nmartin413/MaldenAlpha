@@ -1,60 +1,19 @@
 
 var Q = require('q'),
 	codes = require('./codes'),
-	punycode = require('punycode'),
+	DeviceSocket = require('../network/deviceSocket'),
 	_ = require('underscore'),
 	net = require('net');
 
 var host = "10.0.1.24";
 var port = 23;
 
+var device = DeviceSocket.create(host, port, "denon");
 var commandQueue = Q.promise(function (r) { r(); });
 
 function sendCommand(command) {
 	return commandQueue.then(function () {
-		commandQueue = Q.promise(function (resolve, reject) {
-			var response, error;
-
-			if (!command) {
-				reject('no command supplied');
-			}
-
-			var client = new net.Socket();
-			client.connect(port, host, function() {
-				console.log('[denon] sending command:', command);
-				client.write(command + '\r\n');
-			});
-
-			var timeout = setTimeout(function () {
-				console.log('[denon] timeout');
-				client.destroy();
-			}, 2000);
-
-			client.on('error', function (err) {
-				console.log('[denon] error ', err);
-				error = err;
-				client.destroy();
-			});
-			 
-			client.on('data', function(data) {
-				console.log('[denon] got response', data);
-				response = data.toString('ascii');
-				client.destroy();
-			});
-			 
-			client.on('close', function() {
-				console.log('[denon] closed');
-				clearTimeout(timeout);
-				setTimeout(function () {
-					if (error) {
-						reject(error);
-					} else {
-						resolve(response);
-					}
-				}, 200);
-			});
-		});
-
+		commandQueue = device.send(command);
 		return commandQueue;
 	});
 }
