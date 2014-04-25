@@ -79,12 +79,16 @@ function setInput(input){
 	
 }
 
+function toggleMute(input){
+	return sendCommand('MU' + input);
+}
+
 var stateParams = {
 
 	input: {
 		command: codes.switchInput.query,
 		parser: function (val) {
-			return val
+			return val;
 		}
 	},
 
@@ -92,6 +96,13 @@ var stateParams = {
 		command: codes.masterVolume.query,
 		parser: function (val) {
 			return val.substr(2,2);
+		}
+	},
+	
+	muteStatus: {
+		command: codes.muteStatus.query,
+		parser: function (val) {
+			return val;
 		}
 	}
 };
@@ -126,6 +137,7 @@ function getInputs() {
 
 module.exports.getState = getState;
 module.exports.getInputs = getInputs;
+module.exports.toggleMute = toggleMute;
 
 module.exports.increaseVolume = _.partial(sendCommand, codes.masterVolume.up);
 module.exports.decreaseVolume = _.partial(sendCommand, codes.masterVolume.down);

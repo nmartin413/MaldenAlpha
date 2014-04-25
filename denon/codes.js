@@ -12,6 +12,12 @@ var config = {
 		up: 'MVUP',
 		down: 'MVDOWN',
 		query: 'MV?'
+	},
+	
+	muteStatus: {
+		query: 'MU?',
+		on: 'ON',
+		off: 'OFF'
 	}
 	
 };

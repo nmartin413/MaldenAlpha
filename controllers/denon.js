@@ -47,4 +47,23 @@ module.exports = function (app) {
 			});
 	});
 
+	app.put('/denon/toggleMute', function(req,res){
+		console.log('toggling mute');
+		denon.toggleMute("OFF");
+		
+		denon.getState()
+			.catch(function (err) {
+				model.error = true;
+				model.denonError = err;
+			})
+			.then(function (state) {
+				model.denon = state;
+				console.log("current state" + state);
+				if (state.muteStatus === "ON"){
+					denon.toggleMute("OFF");
+				}else{
+					denon.toggleMute("ON");
+				}
+			});
+	});
 }	
