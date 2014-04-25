@@ -1,14 +1,20 @@
 {
-  "name": "malden-alpha",
-  "description": "malden alpha",
-  "version": "0.0.1",
-  "private": true,
-  
-  "dependencies": {
-    "express": "3.x",
-    "q": "*",
-    "prompt": "*",
-    "underscore": "*",
-    "express3-handlebars": "*"
-  }
+    "name": "malden-alpha",
+    "description": "malden alpha",
+    "version": "0.0.1",
+    "private": true,
+
+    "dependencies": {
+        "express": "3.x",
+        "q": "*",
+        "grunt": "*",
+        "grunt-contrib-handlebars": "*",
+        "grunt-ember-templates": "*",
+        "grunt-contrib-watch": "*",
+        "socket.io": "*",
+        "prompt": "*",
+        "underscore": "*",
+        "backbone": "*",
+        "express3-handlebars": "*"
+    }
 }

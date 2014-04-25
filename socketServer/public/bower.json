@@ -1,0 +1,11 @@
+{
+	"name": "MaldenAlpha",
+
+	"dependencies": {
+		"ember"                      : "~1.5",
+		"underscore"                 : "*",
+        "ember-data"                 : "~1.0.0-beta.6",
+        "ember-localstorage-adapter" : "*",
+        "requirejs"                  : "*"
+	}
+}
