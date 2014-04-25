@@ -4,6 +4,7 @@ var app = express();
 
 var denon = require('./denon');
 var tivo = require('./tivo');
+var media = require('./media');
 
 
 var exphbs  = require('express3-handlebars');
@@ -32,6 +33,7 @@ app.get('/', function (req, res) {
 
 require('./controllers/denon')(app);
 require('./controllers/tivo')(app);
+require('./controllers/media')(app);
 
 
 var server = app.listen(8080, function() {
