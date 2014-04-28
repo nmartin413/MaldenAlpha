@@ -12,6 +12,7 @@ require([
 	require([
 
 		'handlebars',
+		'shared/handlebars.helpers',
 		'templates',
 		'controllers/applicationController',
 		'controllers/indexController',

@@ -1,7 +1,7 @@
 
-html {
-	background:#ddd;
-}
+@import "index.less";
+
+html { }
 
 .app-root {
 	padding:10px 0 20px;
@@ -11,7 +11,7 @@ html {
 
 .keypad {
 	width:80%;
-	margin:0 10%;
+	margin:10px 10%;
 
 	[data-num] {
 		width: 32%;
@@ -45,40 +45,6 @@ html {
 
 }
 
-.channel-entry {
-	position: relative;
-	font-size:28px;
-	text-align: center;
-	height:50px;
-	line-height:50px;
-
-	.current-sequence {
-		position:absolute;
-		z-index: 0;
-		top:0;
-		width:100%;
-		left:0;
-		height:100%;
-	}
-
-	.clear-sequence {
-		position:absolute;
-		z-index: 20;
-		right:0;
-		top:0;
-		height:100%;
-		background:rgba(66,133,244,1);
-		color:#fff;
-		height:24px;
-		width:24px;
-		border-radius: 24px;
-		font-size: 16px;
-		display:block;
-		float:right;
-		margin-top:13px;
-		line-height: 23px;
-	}
-}
 
 .channel-confirm {
 	text-align:center;
@@ -101,6 +67,7 @@ html {
 
 	}
 }
+
 
 
 

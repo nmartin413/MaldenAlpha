@@ -1,21 +1,25 @@
-
-<div class="row">
-	<div class="col-md-12">
-		<div class="channel-entry">
-			<span class="current-sequence">{{currentSequence}}</span>
-			{{#if currentSequence}}
-				<span class="clear-sequence" {{action 'clearSequence'}}>&cross;</span>
-			{{/if}}
-		</div>
-		<div class="keypad">
-			{{#each numberedKeys}}
-			<div data-num="{{this}}" {{action 'pressedKey' this}}>
-				<span>{{this}}</span>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="keypad">
+				{{#each numberedKeys}}
+				<div data-num="{{this}}" {{action 'pressedKey' this}}>
+					<span>{{this}}</span>
+				</div>
+				{{/each}}
 			</div>
-			{{/each}}
-		</div>
-		<div class="channel-confirm">
-			<span {{action 'changeChannel'}}>Go</span>
+			{{#if currentSequence}}
+				<div class="channel-entry row">
+					<div class="col-xs-7 col-xs-offset-1">
+						<span class="current-sequence btn btn-lg btn-primary btn-block" {{action 'changeChannel'}}>
+							Go to {{currentSequence}}
+						</span>
+					</div>
+					<div class="col-xs-3">
+						<span class="clear-sequence btn btn-danger btn-block btn-lg" {{action 'clearSequence'}}>&cross;</span>
+					</div>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 </div>

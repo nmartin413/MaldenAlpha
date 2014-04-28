@@ -1,6 +1,55 @@
-<br>
-<p>Client Count: {{clientCount}}</p>
-<p>Current Volume: {{volume}}</p>
-<hr>
-<button class="btn btn-default" {{action 'decrease'}}>dn</button>
-<button class="btn btn-default" {{action 'increase'}}>up</button>
+<div class="container index-page">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="btn-group btn-group-justified">
+				<div class="btn-group">
+					<button class="btn btn-default" {{action 'decrease'}}>
+						{{glyph 'minus'}}
+					</button>
+				</div>
+				<div class="btn-group">
+					<span class="btn btn-default">{{displayVolume}}</span>
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-default" {{action 'increase'}}>
+						{{glyph 'plus'}}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="btn-group btn-group-justified">
+				{{#each directionalButtons}}
+					<div class="btn-group">
+						<button class="btn btn-default" {{action 'tivoIRCommand' cmd}}>
+							<span class="glyphicon glyphicon-{{unbound icon}}"></span>
+						</button>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<button class="btn btn-block btn-default" {{action 'tivoIRCommand' 'EXIT'}}>Exit</button>
+		</div>
+		<div class="col-xs-6">
+			<button class="btn btn-block btn-default" {{action 'tivoIRCommand' 'SELECT'}}>Select</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<button class="btn btn-block btn-default" {{action 'tivoIRCommand' 'GUIDE'}}>Guide</button>
+		</div>
+		<div class="col-xs-6">
+			<button class="btn btn-block btn-default" {{action 'tivoIRCommand' 'TIVO'}}>TiVo</button>
+		</div>
+	</div>
+</div>
+
+
+
+
+

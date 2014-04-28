@@ -21,8 +21,21 @@ define([
 	var vent = Vent.create();
 
 	var socket = io.connect(window.location.origin);
+	
 	vent.send = function (updates) {
 		socket.emit('update', updates);
+	}
+
+	vent.tivoChannel = function (channel) {
+		vent.tivo("SETCH " + channel);
+	}
+
+	vent.tivoIR = function (command) {
+		vent.tivo("IRCODE " + command);
+	}
+
+	vent.tivo = function (command) {
+		socket.emit('tivocommand', command);
 	}
 
 	socket.on('data', function (data) {

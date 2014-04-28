@@ -30,6 +30,8 @@ define([
 				if (channel.length > 3) {
 					alert('Please enter a sequence less than 4');
 				}
+				this.set('currentSequence', '');
+				Stream.tivoChannel(channel);
 			}
 
 		}		

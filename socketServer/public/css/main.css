@@ -1,12 +1,15 @@
-html {
-  background: #ddd;
+.index-page {
+  padding-top: 10px;
+}
+.index-page .row {
+  margin-bottom: 20px;
 }
 .app-root {
   padding: 10px 0 20px;
 }
 .keypad {
   width: 80%;
-  margin: 0 10%;
+  margin: 10px 10%;
 }
 .keypad [data-num] {
   width: 32%;
@@ -32,38 +35,6 @@ html {
   transition: 100ms background, 100ms color;
   background: #4285f4;
   color: #fff;
-}
-.channel-entry {
-  position: relative;
-  font-size: 28px;
-  text-align: center;
-  height: 50px;
-  line-height: 50px;
-}
-.channel-entry .current-sequence {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  width: 100%;
-  left: 0;
-  height: 100%;
-}
-.channel-entry .clear-sequence {
-  position: absolute;
-  z-index: 20;
-  right: 0;
-  top: 0;
-  height: 100%;
-  background: #4285f4;
-  color: #fff;
-  height: 24px;
-  width: 24px;
-  border-radius: 24px;
-  font-size: 16px;
-  display: block;
-  float: right;
-  margin-top: 13px;
-  line-height: 23px;
 }
 .channel-confirm {
   text-align: center;

@@ -1,7 +1,10 @@
 
+// clear console
+process.stdout.write('\u001B[2J\u001B[0;0f');
 
-var express 	= require('express'),
-	state 		= require('./state');
+var express = require('express');
+var state   = require('./state');
+var tivo    = require('../tivo');
 
 state.init();
 
@@ -35,6 +38,10 @@ io.sockets.on('connection', function (socket) {
 	socket.on('update', function (data) {
 		state.merge(data);
 		clients.update();
+	});
+
+	socket.on('tivocommand', function (command) {
+		tivo.sendCommand(command);
 	});
 
 	socket.on('disconnect', function () {

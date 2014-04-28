@@ -1,11 +1,15 @@
 <div class="container">
 	<ul class="nav nav-pills">
 		<li>
-			{{#link-to 'index'}}Home{{/link-to}}
+			{{#link-to 'index'}}
+				{{glyph 'home'}}
+			{{/link-to}}
 		</li>
 		<li>
-			{{#link-to 'keypad'}}Keypad{{/link-to}}
+			{{#link-to 'keypad'}}
+				{{glyph 'th'}}
+			{{/link-to}}
 		</li>
 	</ul>
-	{{outlet 'body'}}
 </div>
+{{outlet 'body'}}
