@@ -56,6 +56,9 @@ module.exports = function (app) {
 		var command = req.body.command;
 
 		tivo.sendCommand(command)
+			.progress(function (msg) {
+				console.log(msg);
+			})
 			.fail(function (err) {
 				res.json({
 					msg: 'Error with TiVo, sent ' + command,

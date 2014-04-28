@@ -30,4 +30,6 @@
 	/*display:block;*/
 }
 
-#volumeRange, #setVolume, #setInput {display:none;}
+#volumeRange, #setVolume, #setInput {
+	display:none;
+}

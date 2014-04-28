@@ -11,6 +11,7 @@
         "grunt-contrib-handlebars": "*",
         "grunt-ember-templates": "*",
         "grunt-contrib-watch": "*",
+        "grunt-contrib-less": "*",
         "socket.io": "*",
         "prompt": "*",
         "underscore": "*",

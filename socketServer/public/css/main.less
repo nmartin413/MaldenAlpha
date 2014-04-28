@@ -1,0 +1,109 @@
+
+html {
+	background:#ddd;
+}
+
+.app-root {
+	padding:10px 0 20px;
+}
+
+@keySize: 60px;
+
+.keypad {
+	width:80%;
+	margin:0 10%;
+
+	[data-num] {
+		width: 32%;
+		text-align:center;
+		display:inline-block;
+
+		&[data-num="0"] {
+			margin-left: 33.9%;
+		}
+
+		span {
+			transition: 500ms background, 500ms color;
+			background:rgba(66,133,244, 0);
+			font-size:23px;
+			line-height:@keySize - 2;
+			height:@keySize;
+			width:@keySize;
+			border-radius:@keySize;
+			display:inline-block;
+			border:1px solid rgba(66,133,244,1);
+			margin-bottom:5px;
+
+			&:active {
+				transition: 100ms background, 100ms color;
+				background:rgba(66,133,244,1);
+				color:#fff;
+			}
+
+		}
+	}
+
+}
+
+.channel-entry {
+	position: relative;
+	font-size:28px;
+	text-align: center;
+	height:50px;
+	line-height:50px;
+
+	.current-sequence {
+		position:absolute;
+		z-index: 0;
+		top:0;
+		width:100%;
+		left:0;
+		height:100%;
+	}
+
+	.clear-sequence {
+		position:absolute;
+		z-index: 20;
+		right:0;
+		top:0;
+		height:100%;
+		background:rgba(66,133,244,1);
+		color:#fff;
+		height:24px;
+		width:24px;
+		border-radius: 24px;
+		font-size: 16px;
+		display:block;
+		float:right;
+		margin-top:13px;
+		line-height: 23px;
+	}
+}
+
+.channel-confirm {
+	text-align:center;
+	margin:10px 10px;
+
+	span {
+		border-radius:5px;
+		background:#eee;
+		transition:500ms all;
+		display:inline-block;
+		font-size:23px;
+		line-height:42px;
+		width:100%;
+
+		&:active {
+			transition:100ms all;
+			background:rgba(66,133,244,1);
+			color:#fff;
+		}
+
+	}
+}
+
+
+
+
+
+

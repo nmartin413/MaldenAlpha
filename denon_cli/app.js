@@ -3,7 +3,7 @@ var Q = require('q');
 var display = require('./display')
 var DeviceSocket = require('../network/deviceSocket');
 
-var device = DeviceSocket.create("10.0.1.24", 23, "denon");
+var device = DeviceSocket.create("10.0.1.24", 23);
 
 var stdin = process.openStdin();
 display.clear();

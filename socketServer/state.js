@@ -5,7 +5,7 @@ var DeviceSocket = require('../network/deviceSocket'),
 
 var state = _.clone(Backbone.Events);
 
-var denon = DeviceSocket.create('10.0.1.24', 23, 'denon');
+var denon = DeviceSocket.create('10.0.1.24', 23);
 
 var attributes = state.attributes = {};
 

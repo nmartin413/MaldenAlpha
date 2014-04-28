@@ -15,8 +15,10 @@ require([
 		'templates',
 		'controllers/applicationController',
 		'controllers/indexController',
+		'controllers/keypadController',
 		'views/volumeControlView',
 		'routes/indexRoute',
+		'routes/keypadRoute'
 
 	], function (Handlebars, Templates) {
 
@@ -25,10 +27,16 @@ require([
 			rootElement: '#root'
 			
 		});
+
+		App.Router.map(function () {
+			this.route('keypad', { path: '/keypad' });
+		});
 		
 		App.ApplicationController = require('controllers/applicationController');
 		App.IndexController       = require('controllers/indexController');
+		App.KeypadController      = require('controllers/keypadController');
 		App.IndexRoute            = require('routes/indexRoute');
+		App.KeypadRoute           = require('routes/keypadRoute');
 		App.VolumeControlView     = require('views/volumeControlView');
 
 	});

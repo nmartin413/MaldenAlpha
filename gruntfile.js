@@ -6,6 +6,13 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 
 		watch: {
+			less: {
+				files: ['socketServer/**/*.less'],
+				tasks: ['less:compile'],
+				options: {
+					spawn: false
+				}
+			},
 			socketServer: {
 				files: ['socketServer/**/*.hbs'],
 				tasks: ['emberTemplates'],
@@ -31,6 +38,14 @@ module.exports = function (grunt) {
 			}
 		},
 
+		less: {
+			compile: {
+				files: {
+					"socketServer/public/css/main.css": ['socketServer/public/css/main.less']
+				}
+			}
+		},
+
 		emberTemplates: {
 		  compile: {
 		    options: {
@@ -48,5 +63,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-ember-templates');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-less');
 
 }

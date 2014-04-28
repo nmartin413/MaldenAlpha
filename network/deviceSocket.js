@@ -1,11 +1,18 @@
 
 var Q 		= require('q'),
+	_		= require('underscore'),
 	net 	= require('net');
 
-module.exports.create = function (host, port, name) {
+var defaultOpts = {
+	endOnResponse: false
+}
+
+module.exports.create = function (host, port, opts) {
+
+	var opts = _.defaults((opts || {}), defaultOpts);
 
 	var socket = new net.Socket({
-		allowHalfOpen: true,
+		allowHalfOpen: false,
 		readable: false,
 		writable: false
 	});
@@ -30,6 +37,9 @@ module.exports.create = function (host, port, name) {
 				socket.removeListener('error', reject);
 				var str = data.toString('ascii');
 				resolve(str);
+				if (opts.endOnResponse) {
+					socket.end();
+				}
 			});
 			socket.write(command + '\r');
 			notify('waiting...');

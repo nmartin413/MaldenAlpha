@@ -6,10 +6,17 @@ define([
 
 ], function (BaseView) {
 
-
 	return BaseView.extend({
 
 		events: {
+			"touchend [data-tivo-code]": function (evt) {
+				evt.preventDefault();
+				if (this.$el.find('#tivoButtons').hasClass('sending')) return;
+
+				var code = $(evt.currentTarget).data('tivoCode');
+				this.sendCode('KEYBOARD ' + code);
+			},
+			
 			"click [data-tivo-code]": function (evt) {
 				evt.preventDefault();
 				if (this.$el.find('#tivoButtons').hasClass('sending')) return;

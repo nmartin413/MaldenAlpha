@@ -8,7 +8,7 @@ var Q = require('q'),
 var host = "10.0.1.24";
 var port = 23;
 
-var device = DeviceSocket.create(host, port, "denon");
+var device = DeviceSocket.create(host, port);
 var commandQueue = Q.promise(function (r) { r(); });
 
 function sendCommand(command) {

@@ -1,0 +1,21 @@
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="channel-entry">
+			<span class="current-sequence">{{currentSequence}}</span>
+			{{#if currentSequence}}
+				<span class="clear-sequence" {{action 'clearSequence'}}>&cross;</span>
+			{{/if}}
+		</div>
+		<div class="keypad">
+			{{#each numberedKeys}}
+			<div data-num="{{this}}" {{action 'pressedKey' this}}>
+				<span>{{this}}</span>
+			</div>
+			{{/each}}
+		</div>
+		<div class="channel-confirm">
+			<span {{action 'changeChannel'}}>Go</span>
+		</div>
+	</div>
+</div>
