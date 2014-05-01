@@ -3,9 +3,10 @@ var Q = require('q'),
 	codes = require('./codes'),
 	DeviceSocket = require('../network/deviceSocket'),
 	_ = require('underscore'),
+	Config = require('../config'),
 	net = require('net');
 
-var host = "10.0.1.24";
+var host = Config.avrAddress;
 var port = 23;
 
 var device = DeviceSocket.create(host, port);
@@ -94,15 +95,15 @@ function getInputs() {
 
 
 
-module.exports.getState = getState;
-module.exports.getInputs = getInputs;
-module.exports.toggleMute = toggleMute;
+module.exports.getState       = getState;
+module.exports.getInputs      = getInputs;
+module.exports.toggleMute     = toggleMute;
 
 module.exports.increaseVolume = _.partial(sendCommand, codes.masterVolume.up);
 module.exports.decreaseVolume = _.partial(sendCommand, codes.masterVolume.down);
 
-module.exports.setVolume = setVolume;
-module.exports.setInput = setInput;
+module.exports.setVolume      = setVolume;
+module.exports.setInput       = setInput;
 
 
 

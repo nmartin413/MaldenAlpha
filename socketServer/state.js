@@ -1,10 +1,11 @@
 
-var DeviceSocket = require('../network/deviceSocket'),
-	Backbone = require('backbone'),
-	_ = require('underscore');
+var DeviceSocket = require('../network/deviceSocket');
+var	Backbone     = require('backbone');
+var	Config       = require('../config');
+var	_            = require('underscore');
 
 var state = _.clone(Backbone.Events);
-var denon = DeviceSocket.create('10.0.1.24', 23);
+var denon = DeviceSocket.create(Config.avrAddress, 23);
 var attributes = state.attributes = {};
 
 var toJSON = state.toJSON = function () {

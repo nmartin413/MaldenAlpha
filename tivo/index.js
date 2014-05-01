@@ -1,12 +1,13 @@
 
 
-var Q = require('q'),
-	DeviceSocket = require('../network/deviceSocket'),
-	_ = require('underscore'),
-	net = require('net');
+var Q            = require('q');
+var DeviceSocket = require('../network/deviceSocket');
+var _            = require('underscore');
+var Config       = require('../config');
+var net          = require('net');
 
 
-var host = "10.0.1.2";
+var host = Config.avrAddress;
 var port = 31339;
 
 var commandQueue = Q.promise(function (r) { r(); });
