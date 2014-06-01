@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 	var model = {};
 
 	denon.getState()
-		.catch(function (err) {
+		.catch(function (err) { 
 			model.error = true;
 			model.denonError = err;
 			res.render('home', model);
