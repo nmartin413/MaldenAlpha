@@ -6,7 +6,7 @@ var Q = require('q'),
 	Config = require('../config'),
 	net = require('net');
 
-var host = Config.avrAddress;
+var host = Config.avrHost;
 var port = 23;
 
 var device = DeviceSocket.create(host, port);

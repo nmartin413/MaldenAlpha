@@ -23,14 +23,64 @@ function program3(depth0,data) {
   return buffer;
   }
 
+function program5(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n				");
+  data.buffer.push(escapeExpression((helper = helpers.glyph || (depth0 && depth0.glyph),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "th-list", options) : helperMissing.call(depth0, "glyph", "th-list", options))));
+  data.buffer.push("\n			");
+  return buffer;
+  }
+
+function program7(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n				");
+  data.buffer.push(escapeExpression((helper = helpers.glyph || (depth0 && depth0.glyph),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "log-in", options) : helperMissing.call(depth0, "glyph", "log-in", options))));
+  data.buffer.push("\n			");
+  return buffer;
+  }
+
   data.buffer.push("<div class=\"container\">\n	<ul class=\"nav nav-pills\">\n		<li>\n			");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "index", options) : helperMissing.call(depth0, "link-to", "index", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n		</li>\n		<li>\n			");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "keypad", options) : helperMissing.call(depth0, "link-to", "keypad", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n		</li>\n	</ul>\n</div>\n");
-  data.buffer.push(escapeExpression((helper = helpers.outlet || (depth0 && depth0.outlet),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "body", options) : helperMissing.call(depth0, "outlet", "body", options))));
+  data.buffer.push("\n		</li>\n		<li>\n			");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "channel", options) : helperMissing.call(depth0, "link-to", "channel", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n		</li>\n		<li>\n			");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "input", options) : helperMissing.call(depth0, "link-to", "input", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n		</li>\n	</ul>\n</div>\n<br>\n");
+  stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["channel"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n				<button class=\"btn btn-block btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "goToChannel", "number", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">");
+  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</button>\n				<br />\n			");
+  return buffer;
+  }
+
+  data.buffer.push("<div class=\"container input-page\">\n	<div class=\"row\">\n		<div class=\"col-xs-12\">\n			");
+  stack1 = helpers.each.call(depth0, "channels", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n		</div>\n	</div>\n</div>\n\n\n\n\n\n");
   return buffer;
   
 });
@@ -65,7 +115,15 @@ function program1(depth0,data) {
   data.buffer.push("\n					</button>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"col-xs-12\">\n			<div class=\"btn-group btn-group-justified\">\n				");
   stack1 = helpers.each.call(depth0, "directionalButtons", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n			</div>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"col-xs-6\">\n			<button class=\"btn btn-block btn-default\" ");
+  data.buffer.push("\n			</div>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"col-xs-12\">\n			<div class=\"btn-group btn-group-justified\">\n				<div class=\"btn-group\">\n					<button class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "tivoIRCommand", "CHANNELUP", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push(">\n						");
+  data.buffer.push(escapeExpression((helper = helpers.glyph || (depth0 && depth0.glyph),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "arrow-up", options) : helperMissing.call(depth0, "glyph", "arrow-up", options))));
+  data.buffer.push("\n					</button>\n				</div>\n				<div class=\"btn-group\">\n					<button class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "tivoIRCommand", "CHANNELDOWN", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push(">\n						");
+  data.buffer.push(escapeExpression((helper = helpers.glyph || (depth0 && depth0.glyph),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "arrow-down", options) : helperMissing.call(depth0, "glyph", "arrow-down", options))));
+  data.buffer.push("\n					</button>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"col-xs-6\">\n			<button class=\"btn btn-block btn-default\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "tivoIRCommand", "EXIT", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
   data.buffer.push(">Exit</button>\n		</div>\n		<div class=\"col-xs-6\">\n			<button class=\"btn btn-block btn-default\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "tivoIRCommand", "SELECT", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
@@ -74,6 +132,23 @@ function program1(depth0,data) {
   data.buffer.push(">Guide</button>\n		</div>\n		<div class=\"col-xs-6\">\n			<button class=\"btn btn-block btn-default\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "tivoIRCommand", "TIVO", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
   data.buffer.push(">TiVo</button>\n		</div>\n	</div>\n</div>\n\n\n\n\n\n");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["input"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push("<div class=\"container input-page\">\n	<div class=\"row\">\n		<div class=\"col-xs-12\">\n			<button class=\"btn btn-block btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "denonCommand", "SITV/CBL", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push(">\n				<img src=\"img/tivo.png\" alt=\"\">\n			</button>\n			<button class=\"btn btn-block btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "denonCommand", "SIDVR", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push(">\n				<img src=\"img/chromecast.png\" alt=\"\">\n			</button>\n			<button class=\"btn btn-block btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "denonCommand", "SIV.AUX", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data})));
+  data.buffer.push(">\n				<img src=\"img/xbox.png\" alt=\"\">\n			</button>\n		</div>\n	</div>\n</div>\n\n\n\n\n\n");
   return buffer;
   
 });

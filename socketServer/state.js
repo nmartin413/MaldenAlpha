@@ -1,12 +1,11 @@
 
-var DeviceSocket = require('../network/deviceSocket');
 var	Backbone     = require('backbone');
 var	Config       = require('../config');
 var	_            = require('underscore');
 
 var state = _.clone(Backbone.Events);
-var denon = DeviceSocket.create(Config.avrAddress, 23);
 var attributes = state.attributes = {};
+var denon;
 
 var toJSON = state.toJSON = function () {
 	return _.clone(attributes);
@@ -50,7 +49,8 @@ function getVolume(vol) {
 		.then(handleVolumeResponse);
 }
 
-var init = state.init = function () {
+var init = state.init = function (sentDenon) {
+	denon = sentDenon;
 	getVolume();
 }
 

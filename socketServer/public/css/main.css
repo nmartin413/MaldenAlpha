@@ -36,6 +36,12 @@
   background: #4285f4;
   color: #fff;
 }
+.input-page button img {
+  max-width: 100%;
+  display: block;
+  height: 35px;
+  margin: 10px auto;
+}
 .channel-confirm {
   text-align: center;
   margin: 10px 10px;

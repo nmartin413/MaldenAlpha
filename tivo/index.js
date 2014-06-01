@@ -7,7 +7,7 @@ var Config       = require('../config');
 var net          = require('net');
 
 
-var host = Config.avrAddress;
+var host = Config.tivoHost;
 var port = 31339;
 
 var commandQueue = Q.promise(function (r) { r(); });

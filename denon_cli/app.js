@@ -4,7 +4,7 @@ var display = require('./display')
 var DeviceSocket = require('../network/deviceSocket');
 var Config = require('../config');
 
-var device = DeviceSocket.create(Config.avrAddress, 23);
+var device = DeviceSocket.create(Config.avrHost, 23);
 
 var stdin = process.openStdin();
 display.clear();

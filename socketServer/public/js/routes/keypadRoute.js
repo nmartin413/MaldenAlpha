@@ -8,16 +8,16 @@ define([
 
 	return Ember.Route.extend({
 
-		init: function () {
-			console.log('init keypad route');
-		},
+		// init: function () {
+		// 	console.log('init keypad route');
+		// },
 
-		renderTemplate: function () {
-			this.render('keypad', {
-				controller: 'keypad',
-				outlet: 'body'
-			});
-		}
+		// renderTemplate: function () {
+		// 	this.render('keypad', {
+		// 		controller: 'keypad',
+		// 		outlet: 'body'
+		// 	});
+		// }
 
 	})
 

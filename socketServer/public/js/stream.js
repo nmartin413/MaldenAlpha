@@ -38,6 +38,10 @@ define([
 		socket.emit('tivocommand', command);
 	}
 
+	vent.denon = function (command) {
+		socket.emit('denoncommand', command);
+	}
+
 	socket.on('data', function (data) {
 		console.log('got socket data', data);
 		vent.update(data);

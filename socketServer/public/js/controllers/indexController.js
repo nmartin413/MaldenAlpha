@@ -36,6 +36,7 @@ define([
 				this.set('volume', Stream.get('data.volume'));
 			}, this));
 
+			this._super();
 		},
 
 		sendUpdates: function () {

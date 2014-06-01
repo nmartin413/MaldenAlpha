@@ -2,11 +2,15 @@
 // clear console
 process.stdout.write('\u001B[2J\u001B[0;0f');
 
-var express = require('express');
-var state   = require('./state');
-var tivo    = require('../tivo');
+var express      = require('express');
+var state        = require('./state');
+var DeviceSocket = require('../network/deviceSocket');
+var	Config       = require('../config');
+var tivo         = require('../tivo');
 
-state.init();
+var denon = DeviceSocket.create(Config.avrHost, 23);
+
+state.init(denon);
 
 // Express Setup
 
@@ -42,6 +46,10 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('tivocommand', function (command) {
 		tivo.sendCommand(command);
+	});
+
+	socket.on('denoncommand', function (command) {
+		denon.send(command);
 	});
 
 	socket.on('disconnect', function () {

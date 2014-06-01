@@ -1,5 +1,7 @@
 require.config({
 
+	waitSeconds: 0,
+
 	paths: {
 		socketio: '/socket.io/socket.io',
 		underscore: 'lib/underscore/underscore',
